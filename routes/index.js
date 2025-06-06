@@ -8,4 +8,7 @@ router.get('/', (req, res) => {
 //Add the files to the routes we are going to use
 router.use('/user', require('./users'));
 
+//Routes for teachers
+router.use('/teacher', require('./teachers'));
+
 module.exports = router;

@@ -1,0 +1,34 @@
+#GET ALL TEACHER
+
+GET http://localhost:3000/teacher
+
+###
+#GET TEACHER BY ID
+GET http://localhost:3000/teacher/683e045bf769923cef4fbc98
+
+###
+#CREATE TEACHER
+
+POST http://localhost:3000/teacher
+Content-Type: application/json
+
+{
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "john.doe@byui.edu"
+}
+
+###
+#UPDATE TEACHER
+PUT http://localhost:3000/teacher/683e045bf769923cef4fbc98
+Content-Type: application/json
+
+{
+  "firstname": "Bob",
+  "lastname": "Rogers",
+  "email": "bobrogers@byui.edu"
+}
+
+###
+#DELETE TEACHER
+DELETE http://localhost:3000/teacher/68425213fef3991b41700b65
