@@ -6,9 +6,14 @@ router.get('/', (req, res) => {
 });
 
 //Add the files to the routes we are going to use
+
+//Route for users
 router.use('/user', require('./users'));
 
-//Routes for teachers
+//Route for teachers
 router.use('/teacher', require('./teachers'));
+
+//Route for teachers
+router.use('/student', require('./students'));
 
 module.exports = router;

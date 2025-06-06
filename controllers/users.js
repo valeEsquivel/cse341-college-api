@@ -33,7 +33,6 @@ const createUser = async (req, res) => {
     try {
         const user = {
             username: req.body.username,
-            password: req.body.password,
             role: req.body.role
         };
         const response = await mongodb.getDB().db().collection('users').insertOne(user);
@@ -53,7 +52,6 @@ const updateUser = async (req, res) => {
         const userId = new ObjectId(req.params.userId);
         const user = {
             username: req.body.username,
-            password: req.body.password,
             role: req.body.role
         };
         const response = await mongodb.getDB().db().collection('users').replaceOne({ _id: userId }, user);

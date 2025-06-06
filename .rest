@@ -1,3 +1,38 @@
+#GET ALL USER
+
+GET http://localhost:3000/user
+
+###
+#GET USER BY ID
+GET http://localhost:3000/user/683e03eff769923cef4fbc97
+
+###
+#CREATE USER
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "username": "john.doe@byui.edu",
+  "role": "TEACHER"
+}
+
+###
+#UPDATE USER
+PUT http://localhost:3000/teacher/683e03eff769923cef4fbc97
+Content-Type: application/json
+
+{
+  "username": "bobrogers@byui.edu",
+  "role": "TEACHER"
+}
+
+###
+#DELETE USER
+DELETE http://localhost:3000/teacher/68425213fef3991b41700b65
+
+//--------------------------------------------------------------------------------------------------
+
 #GET ALL TEACHER
 
 GET http://localhost:3000/teacher
@@ -32,3 +67,42 @@ Content-Type: application/json
 ###
 #DELETE TEACHER
 DELETE http://localhost:3000/teacher/68425213fef3991b41700b65
+
+//--------------------------------------------------------------------------------------------------
+
+#GET ALL STUDENT
+
+GET http://localhost:3000/student
+
+###
+#GET STUDENT BY ID
+GET http://localhost:3000/student/683e045bf769923cef4fbc98
+
+###
+#CREATE STUDENT
+
+POST http://localhost:3000/student
+Content-Type: application/json
+
+{
+  "firstname": "Bruce",
+  "lastname": "Wayne",
+  "email": "bruce.wayne@byui.edu",
+  "birthday": "5/13/1981"
+}
+
+###
+#UPDATE STUDENT
+PUT http://localhost:3000/student/683e045bf769923cef4fbc98
+Content-Type: application/json
+
+{
+  "firstname": "Bruce",
+  "lastname": "Wayne",
+  "email": "batman@byui.edu",
+  "birthday": "5/13/1981"
+}
+
+###
+#DELETE STUDENT
+DELETE http://localhost:3000/student/68425213fef3991b41700b65
