@@ -2,28 +2,36 @@
   "name": "cse341-node-052025",
   "version": "1.0.0",
   "description": "Project Term 3 2025",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/valeEsquivel/cse341-node-052025#readme",
+  "bugs": {
+    "url": "https://github.com/valeEsquivel/cse341-node-052025/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/valeEsquivel/cse341-node-052025.git"
   },
-  "author": "Valeria Esquivel",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/valeEsquivel/cse341-node-052025/issues"
+  "author": "Valeria Esquivel",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "swagger": "node ./swagger.js"
   },
-  "homepage": "https://github.com/valeEsquivel/cse341-node-052025#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongodb": "^6.16.0",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "mongodb": "^6.17.0",
+    "passport": "^0.7.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "^9.27.0"
-  }
+  },
+  "keywords": []
 }

@@ -7,6 +7,8 @@ router.get('/', (req, res) => {
 
 //Add the files to the routes we are going to use
 
+router.use('/', require('./swagger'));
+
 //Route for users
 router.use('/user', require('./users'));
 
