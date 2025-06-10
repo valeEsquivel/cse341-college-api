@@ -13,7 +13,10 @@ router.use('/user', require('./users'));
 //Route for teachers
 router.use('/teacher', require('./teachers'));
 
-//Route for teachers
+//Route for students
 router.use('/student', require('./students'));
+
+//Route for courses
+router.use('/course', require('./courses'));
 
 module.exports = router;
