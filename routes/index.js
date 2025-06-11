@@ -21,4 +21,7 @@ router.use('/student', require('./students'));
 //Route for courses
 router.use('/course', require('./courses'));
 
+//Route for grades
+router.use('/grade', require('./grades'));
+
 module.exports = router;
