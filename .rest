@@ -106,3 +106,43 @@ Content-Type: application/json
 ###
 #DELETE STUDENT
 DELETE http://localhost:3000/student/68425213fef3991b41700b65
+
+/--------------------------------------------------------------------------------------------------
+
+#GET ALL GRADE
+
+GET http://localhost:3000/grade
+
+
+###
+#GET GRADE BY ID
+GET http://localhost:3000/grade/684918e3d30da0f70fe04bd9
+
+###
+#CREATE GRADE
+POST http://localhost:3000/grade
+Content-Type: application/json
+
+{
+  "studentId": "683e04f6f769923cef4fbc99",
+  "courseId": "683e0671f769923cef4fbc9c",
+  "term": "Term5 2032",
+  "grade": "CAA",
+  "addDate": "01-29-2025"
+}
+
+###
+#UPDATE GRADE
+PUT http://localhost:3000/grade/683e045bf769923cef4fbc98
+Content-Type: application/json
+
+{
+  "firstname": "Bruce",
+  "lastname": "Wayne",
+  "email": "batman@byui.edu",
+  "birthday": "5/13/1981"
+}
+
+###
+#DELETE GRADE
+DELETE http://localhost:3000/grade/68425213fef3991b41700b65
