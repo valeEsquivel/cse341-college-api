@@ -6,9 +6,19 @@ router.get('/', studentController.getAll);
 
 router.get('/:studentId', studentController.getSingle);
 
-router.post('/', studentController.createStudent);
+router.post(
+    '/',
+    studentRules(),
+    validate,
+    studentController.createStudent
+);
 
-router.put('/:studentId', studentController.updateStudent);
+router.put(
+    '/:studentId',
+    studentRules(),
+    validate,
+    studentController.updateStudent
+);
 
 router.delete('/:studentId', studentController.deleteStudent);
 
