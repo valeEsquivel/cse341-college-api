@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const studentController = require('../controllers/students');
+const { studentRules, validate } = require('../utilities/validation');
 
 router.get('/', studentController.getAll);
 
