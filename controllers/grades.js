@@ -136,10 +136,44 @@ const deleteGrade = async (req, res) => {
     }
 };
 
+const verifyStudent = async (id) => {
+  try {
+    const studentId = new ObjectID(id);
+    const result = await mongodb
+      .getDB()
+      .db()
+      .collection("students")
+      .find({ _id: studentId })
+      .toArray();
+
+    return result.length > 0;
+  } catch (err) {
+    return false;
+  }
+};
+
+const verifyCourse = async (id) => {
+  try {
+    const courseId = new ObjectID(id);
+    const result = await mongodb
+      .getDB()
+      .db()
+      .collection("courses")
+      .find({ _id: courseId })
+      .toArray();
+
+    return result.length > 0;
+  } catch (err) {
+    return false;
+  }
+};
+
 module.exports = {
     getAll,
     getGradesByStudentId,
     addGrade,
     updateGrade,
-    deleteGrade
+    deleteGrade,
+    verifyCourse,
+    verifyStudent
 };
