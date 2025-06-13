@@ -32,13 +32,13 @@ const addGrade = async (req, res) => {
     //#swagger.tags = ['Grades'];
     try {
         // verification of role to add a grade
-        const user = await mongodb.getDB().db().collection('users').findOne({ username: req.body.username });
-        if (!user) {
-            return res.status(401).json({ message: 'Unauthorized' });
-        }
-        if (user.role !== 'TEACHER' && user.role !== 'ADMIN') {
-            return res.status(401).json({ message: 'Unauthorized' });
-        }
+        // const user = await mongodb.getDB().db().collection('users').findOne({ username: req.body.username });
+        // if (!user) {
+        //     return res.status(401).json({ message: 'Unauthorized' });
+        // }
+        // if (user.role !== 'TEACHER' && user.role !== 'ADMIN') {
+        //     return res.status(401).json({ message: 'Unauthorized' });
+        // }
 
         // Verify if course exists
         const courseId = new ObjectId(req.body.courseId);
@@ -78,13 +78,13 @@ const updateGrade = async (req, res) => {
     //#swagger.tags = ['Grades'];
     try {
         // verification of role to add a grade
-        const user = await mongodb.getDB().db().collection('users').findOne({ username: req.body.username });
-        if (!user) {
-            return res.status(401).json({ message: 'Unauthorized' });
-        }
-        if (user.role !== 'TEACHER' && user.role !== 'ADMIN') {
-            return res.status(401).json({ message: 'Unauthorized' });
-        }
+        // const user = await mongodb.getDB().db().collection('users').findOne({ username: req.body.username });
+        // if (!user) {
+        //     return res.status(401).json({ message: 'Unauthorized' });
+        // }
+        // if (user.role !== 'TEACHER' && user.role !== 'ADMIN') {
+        //     return res.status(401).json({ message: 'Unauthorized' });
+        // }
 
         // Verify if course exists
         const courseId = new ObjectId(req.body.courseId);

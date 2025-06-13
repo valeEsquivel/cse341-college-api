@@ -1,14 +1,15 @@
 const router = require('express').Router();
 const teacherController = require('../controllers/teachers');
+const { authCheck } = require('../authentication/authenticate.js');
 
 router.get('/', teacherController.getAll);
 
 router.get('/:teacherId', teacherController.getById);
 
-router.post('/', teacherController.createTeacher);
+router.post('/', authCheck, teacherController.createTeacher);
 
-router.put('/:teacherId', teacherController.updateTeacher);
+router.put('/:teacherId', authCheck, teacherController.updateTeacher);
 
-router.delete('/:teacherId', teacherController.deleteTeacher);
+router.delete('/:teacherId', authCheck, teacherController.deleteTeacher);
 
 module.exports = router;
