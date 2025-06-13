@@ -2,8 +2,8 @@ const { body, validationResult } = require('express-validator');
 
 const teacherRules = () => {
   return [
-    body('firstName').isString().notEmpty(),
-    body('lastName').isString().notEmpty(),
+    body('firstname').isString().notEmpty(),
+    body('lastname').isString().notEmpty(),
     body('email').isEmail().notEmpty(),
   ];
 }
