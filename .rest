@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ###
 #UPDATE USER
-PUT http://localhost:3000/teacher/683e03eff769923cef4fbc97
+PUT http://localhost:3000/user/683e03eff769923cef4fbc97
 Content-Type: application/json
 
 {
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 ###
 #DELETE USER
-DELETE http://localhost:3000/teacher/68425213fef3991b41700b65
+DELETE http://localhost:3000/user/68425213fef3991b41700b65
 
 //--------------------------------------------------------------------------------------------------
 
