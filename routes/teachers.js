@@ -8,9 +8,9 @@ router.get('/', teacherController.getAll);
 
 router.get('/:teacherId', teacherController.getById);
 
-router.post('/', authCheck, teacherValidator.teachersRules(), teacherValidator.validateTeacher, teacherController.createTeacher);
+router.post('/', authCheck, teacherValidator.teachersRules(), teacherValidator.validate, teacherController.createTeacher);
 
-router.put('/:teacherId', authCheck, teacherValidator.teachersRules(), teacherValidator.validateTeacher, teacherController.updateTeacher);
+router.put('/:teacherId', authCheck, teacherValidator.teachersRules(), teacherValidator.validate, teacherController.updateTeacher);
 
 router.delete('/:teacherId', authCheck, teacherController.deleteTeacher);
 

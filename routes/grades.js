@@ -7,9 +7,9 @@ router.get('/', gradeController.getAll);
 
 router.get('/:studentId', gradeController.getGradesByStudentId);
 
-router.post('/', authCheck, gradeValidator.gradesRules(), gradeValidator.validateGrade, gradeController.addGrade);
+router.post('/', authCheck, gradeValidator.gradesRules(), gradeValidator.validate, gradeController.addGrade);
 
-router.put('/:gradeId', authCheck, gradeValidator.gradesRules(), gradeValidator.validateGrade, gradeController.updateGrade);
+router.put('/:gradeId', authCheck, gradeValidator.gradesRules(), gradeValidator.validate, gradeController.updateGrade);
 
 router.delete('/:gradeId', authCheck, gradeController.deleteGrade);
 
