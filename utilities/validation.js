@@ -16,6 +16,17 @@ const studentRules = () => {
   ];
 }
 
+const courseRules = () => {
+  return [
+    body('name').isString().notEmpty(),
+    body('startdate').isString().notEmpty(),
+    body('enddate').isString().notEmpty(),
+    body('registered').isInt().notEmpty(),
+    body('teacherid').isString().notEmpty(),
+    body('inperson').isBoolean().notEmpty(),
+  ];
+}
+
 const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
@@ -32,5 +43,6 @@ const validate = (req, res, next) => {
 module.exports = {
   userRules,
   studentRules,
+  courseRules,
   validate
 };
