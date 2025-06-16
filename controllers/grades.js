@@ -3,34 +3,34 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
     //#swagger.tags = ['Grades'];
-    try {
+
         const result = await mongodb.getDB().db().collection('grades').find();
         result.toArray().then((grade) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(grade);
         });
-    } catch (err) {
-        res.status(400).json({ message: err });
-    }
+
+
+    
 };
 
 const getGradesByStudentId = async (req, res) => {
     //#swagger.tags = ['Grades'];
-    try {
+
         const studentId = new ObjectId(req.params.studentId);
         const result = await mongodb.getDB().db().collection('grades').find({ studentId: studentId });
         result.toArray().then((grade) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(grade);
         });
-    } catch (err) {
-        res.status(400).json({ message: err });
-    }
+
+
+    
 };
 
 const addGrade = async (req, res) => {
     //#swagger.tags = ['Grades'];
-    try {
+
         // verification of role to add a grade
         // const user = await mongodb.getDB().db().collection('users').findOne({ username: req.body.username });
         // if (!user) {
@@ -69,14 +69,12 @@ const addGrade = async (req, res) => {
         } else {
             res.status(500).json(response.error || 'Some error occurred while creating the grade');
         }
-    } catch (err) {
-        res.status(400).json({ message: err });
-    }
+
 };
 
 const updateGrade = async (req, res) => {
     //#swagger.tags = ['Grades'];
-    try {
+
         // verification of role to add a grade
         // const user = await mongodb.getDB().db().collection('users').findOne({ username: req.body.username });
         // if (!user) {
@@ -116,14 +114,12 @@ const updateGrade = async (req, res) => {
         } else {
             res.status(500).json(response.error || 'Some error occurred while updating the grade');
         }
-    } catch (err) {
-        res.status(400).json({ message: err });
-    }
+
 };
 
 const deleteGrade = async (req, res) => {
     //#swagger.tags = ['Grades'];
-    try {
+
         const gradeId = new ObjectId(req.params.gradeId);
         const response = await mongodb.getDB().db().collection('grades').deleteOne({ _id: gradeId });
         if (response.deletedCount > 0) {
@@ -131,9 +127,7 @@ const deleteGrade = async (req, res) => {
         } else {
             res.status(500).json(response.error || 'Some error occurred while deleting the grade');
         }
-    } catch (err) {
-        res.status(400).json({ message: err });
-    }
+
 };
 
 const verifyStudent = async (id) => {
